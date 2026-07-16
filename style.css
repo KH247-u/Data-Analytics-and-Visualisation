@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
-  --bg-dark-start: #0B0F1A;
-  --bg-dark-end: #111C2D;
+  --bg-dark-start: #080C14;
+  --bg-dark-end: #0F1622;
   --accent-blue: #00D1FF;
   --accent-green: #00FFB2;
   --accent-blue-rgb: 0, 209, 255;
   --accent-green-rgb: 0, 255, 178;
   --text-main: #FFFFFF;
-  --text-muted: #8E9AA8;
-  --card-bg: rgba(16, 26, 45, 0.45);
-  --card-border: rgba(0, 209, 255, 0.1);
-  --card-border-green: rgba(0, 255, 178, 0.1);
-  --glow-blue: 0 0 25px rgba(0, 209, 255, 0.2);
-  --glow-green: 0 0 25px rgba(0, 255, 178, 0.2);
+  --text-muted: #7F8E9F;
+  --card-bg: rgba(255, 255, 255, 0.015);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --card-border-green: rgba(255, 255, 255, 0.05);
+  --glow-blue: none;
+  --glow-green: none;
   --font-header: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --header-height: 70px;
@@ -38,8 +38,7 @@ body {
 
 /* Base Presentation Layout */
 .app-container {
-  display: grid;
-  grid-template-columns: 260px 1fr;
+  display: block;
   height: 100vh;
   width: 100vw;
   position: relative;
@@ -56,14 +55,7 @@ body {
 
 /* Sidebar Styling */
 .sidebar {
-  background: rgba(8, 12, 22, 0.8);
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  backdrop-filter: blur(10px);
-  z-index: 10;
+  display: none !important;
 }
 
 .sidebar-logo {
@@ -277,13 +269,15 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
+  transform: translateY(4px); /* Very subtle translation morph */
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s ease;
   z-index: 1;
 }
 
 .slide.active {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
   z-index: 2;
   position: relative;
   top: 0; left: 0; right: 0; bottom: 0;
@@ -370,30 +364,16 @@ body {
 }
 
 .dashboard-card:hover {
-  border-color: rgba(0, 209, 255, 0.35);
-  box-shadow: var(--glow-blue);
-  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .dashboard-card.green-accent:hover {
-  border-color: rgba(0, 255, 178, 0.35);
-  box-shadow: var(--glow-green);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .dashboard-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, rgba(0, 209, 255, 0.3), transparent);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-
-.dashboard-card:hover::before {
-  transform: translateX(100%);
+  display: none;
 }
 
 .card-icon {
@@ -496,8 +476,8 @@ body {
 /* Animations Controller */
 .animate-item {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .slide.active .animate-item {
