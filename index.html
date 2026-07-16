@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analytics and Visualisation - Portfolio Presentation</title>
+  <meta name="description" content="A professional dashboard-style presentation on turning raw data into actionable business insights.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div>
+        <div class="sidebar-logo">Portfolio.DA</div>
+        <ul class="slide-links">
+          <li class="slide-link-item active" data-slide="0">
+            <span class="slide-num">01</span> Title Slide
+          </li>
+          <li class="slide-link-item" data-slide="1">
+            <span class="slide-num">02</span> Introduction
+          </li>
+          <li class="slide-link-item" data-slide="2">
+            <span class="slide-num">03</span> Tools Used
+          </li>
+          <li class="slide-link-item" data-slide="3">
+            <span class="slide-num">04</span> Data Process
+          </li>
+          <li class="slide-link-item" data-slide="4">
+            <span class="slide-num">05</span> Excel Work
+          </li>
+          <li class="slide-link-item" data-slide="5">
+            <span class="slide-num">06</span> Power BI
+          </li>
+          <li class="slide-link-item" data-slide="6">
+            <span class="slide-num">07</span> Tableau
+          </li>
+          <li class="slide-link-item" data-slide="7">
+            <span class="slide-num">08</span> Insights
+          </li>
+          <li class="slide-link-item" data-slide="8">
+            <span class="slide-num">09</span> Key Learnings
+          </li>
+          <li class="slide-link-item" data-slide="9">
+            <span class="slide-num">10</span> Conclusion
+          </li>
+        </ul>
+      </div>
+      <div class="sidebar-footer">
+        <div>Data Analytics & Visualisation</div>
+        <div>Instructor: Course Reviewer</div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top HUD Header -->
+      <header class="dashboard-header">
+        <h1>DATA ANALYTICS <span>& VISUALISATION</span></h1>
+        <div class="header-status">
+          <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE PORTFOLIO DECK</span>
+          </div>
+          <button class="fullscreen-btn" id="fullscreen-toggle">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+            Fullscreen
+          </button>
+        </div>
+      </header>
+
+      <!-- Slides Container -->
+      <div class="slides-wrapper">
+
+        <!-- 1. Title Slide -->
+        <section class="slide active" id="slide-0">
+          <div class="title-slide-container">
+            <div class="bg-mesh"></div>
+            <div class="slide-title-pre animate-item delay-1">Presentation Overview</div>
+            <h2 class="title-main animate-item delay-2">Data Analytics and<br>Visualisation</h2>
+            <p class="title-subtitle animate-item delay-3">Turning Data into Actionable Insights</p>
+            
+            <div class="title-meta animate-item delay-4">
+              <div class="meta-item">
+                <span class="meta-label">Presented By</span>
+                <span class="meta-value">Data Analyst Portfolio</span>
+              </div>
+              <div style="width: 1px; height: 30px; background: rgba(255, 255, 255, 0.1);"></div>
+              <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-value">Business Intelligence</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Introduction -->
+        <section class="slide" id="slide-1">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 02</span>
+            <h2 class="slide-title">Introduction to <span>Core Concepts</span></h2>
+          </div>
+          <div class="dashboard-grid grid-2 animate-item delay-1" style="margin-bottom: 20px;">
+            
+            <!-- What is Data Analytics -->
+            <div class="dashboard-card">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <h3 class="card-title">What is Data Analytics?</h3>
+              <div class="card-content">
+                <p>Data Analytics is the systematic computational analysis of data. By applying statistical algorithms and quantitative processes, we translate raw datasets into qualitative summaries and actionable trends.</p>
+                <ul style="margin-top: 12px;">
+                  <li>Identifies patterns, correlations, and anomalies</li>
+                  <li>Informs predictive and prescriptive modeling</li>
+                  <li>Backs assumptions with empirical evidence</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- What is Data Visualisation -->
+            <div class="dashboard-card green-accent">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+              </div>
+              <h3 class="card-title">What is Data Visualisation?</h3>
+              <div class="card-content">
+                <p>Data Visualisation is the graphic representation of information. By using visual elements like charts, graphs, maps, and sparklines, we provide an accessible way to see and understand trends, outliers, and patterns.</p>
+                <ul style="margin-top: 12px;">
+                  <li>Translates complex queries into visual syntax</li>
+                  <li>Engages the brain's visual processing power</li>
+                  <li>Simplifies presentation of dense multivariate metrics</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Importance in Decision Making -->
+          <div class="dashboard-card animate-item delay-3">
+            <h3 class="card-title" style="color: var(--accent-green);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Importance in Strategic Decision Making
+            </h3>
+            <p class="card-content" style="font-size: 0.95rem; margin-top: 8px;">
+              Combining analytics and visual presentation removes cognitive bias and intuition-driven guess work. Modern dashboards serve as the single source of truth, enabling executives to identify bottlenecks, forecast revenue streams, and reallocate capital dynamically.
+            </p>
+          </div>
+        </section>
+
+        <!-- 3. Tools Used -->
+        <section class="slide" id="slide-2">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 03</span>
+            <h2 class="slide-title">The <span>BI Technology Stack</span></h2>
+          </div>
+          <div class="dashboard-grid grid-3 animate-item delay-1">
+            
+            <!-- Excel -->
+            <div class="dashboard-card green-accent">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg>
+              </div>
+              <h3 class="card-title">Microsoft Excel</h3>
+              <p class="card-subtitle">Data Ingestion & Cleaning</p>
+              <div class="card-content">
+                <p>The foundational layer for data wrangling. Essential for quick tabular computations, data cleaning, and ad-hoc calculations.</p>
+                <ul style="margin-top: 12px; margin-bottom: 20px;">
+                  <li>Pivot tables & Power Query tools</li>
+                  <li>Lookup systems & Logical functions</li>
+                  <li>Basic trend analysis charts</li>
+                </ul>
+              </div>
+              <div class="tool-graphic">
+                <div class="excel-bar" style="--h: 40%; width: 20px;"></div>
+                <div class="excel-bar" style="--h: 75%; width: 20px;"></div>
+                <div class="excel-bar" style="--h: 55%; width: 20px;"></div>
+                <div class="excel-bar" style="--h: 90%; width: 20px;"></div>
+              </div>
+            </div>
+
+            <!-- Power BI -->
+            <div class="dashboard-card">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+              </div>
+              <h3 class="card-title">Microsoft Power BI</h3>
+              <p class="card-subtitle">Interactive Dashboards</p>
+              <div class="card-content">
+                <p>Robust enterprise analytics tool. Connects multiple data schemas to compile high-frequency interactive reports.</p>
+                <ul style="margin-top: 12px; margin-bottom: 20px;">
+                  <li>Data modeling & DAX queries</li>
+                  <li>Interactive filters & KPI cards</li>
+                  <li>Auto-refreshing cloud dashboards</li>
+                </ul>
+              </div>
+              <div class="tool-graphic">
+                <div class="powerbi-card-mock">
+                  <span style="font-size: 0.6rem; color: var(--text-muted); text-transform: uppercase;">SALES INDEX</span>
+                  <span style="font-size: 1.1rem; font-weight: 700; color: var(--accent-blue);">$94.2K</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tableau -->
+            <div class="dashboard-card">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+              <h3 class="card-title">Tableau</h3>
+              <p class="card-subtitle">Visual Storytelling</p>
+              <div class="card-content">
+                <p>Premier presentation and visual analytics platform. Known for custom chart creation and interactive dashboard narratives.</p>
+                <ul style="margin-top: 12px; margin-bottom: 20px;">
+                  <li>Advanced level custom visual charts</li>
+                  <li>Geo-spatial mapping integrations</li>
+                  <li>Story boards for stakeholder pitches</li>
+                </ul>
+              </div>
+              <div class="tool-graphic" style="display: block;">
+                <svg class="tableau-line-mock" viewBox="0 0 100 40">
+                  <path d="M 5,30 Q 25,10 45,25 T 85,5" fill="none" stroke="var(--accent-blue)" stroke-width="2"></path>
+                  <circle cx="85" cy="5" r="3" fill="var(--accent-green)" />
+                </svg>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4. Data Analytics Process -->
+        <section class="slide" id="slide-3">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 04</span>
+            <h2 class="slide-title">The <span>Analytics Pipeline</span></h2>
+          </div>
+          <div class="process-timeline animate-item delay-1">
+            
+            <div class="process-step">
+              <div class="process-num">01</div>
+              <div class="process-desc-wrap">
+                <div class="process-info">
+                  <h4 class="process-title">Data Collection</h4>
+                  <p class="process-text">Ingesting raw data from databases, API feeds, flat CSV files, and web scraping scripts.</p>
+                </div>
+                <span class="process-badge">Extraction</span>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-num">02</div>
+              <div class="process-desc-wrap">
+                <div class="process-info">
+                  <h4 class="process-title">Data Cleaning</h4>
+                  <p class="process-text">Removing duplicate rows, correcting NULL values, standardising date formats, and filtering outliers.</p>
+                </div>
+                <span class="process-badge">Transformation</span>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-num">03</div>
+              <div class="process-desc-wrap">
+                <div class="process-info">
+                  <h4 class="process-title">Data Analysis</h4>
+                  <p class="process-text">Executing cohort groupings, descriptive calculations, correlation studies, and statistical models.</p>
+                </div>
+                <span class="process-badge">Processing</span>
+              </div>
+            </div>
+
+            <div class="process-step">
+              <div class="process-num">04</div>
+              <div class="process-desc-wrap">
+                <div class="process-info">
+                  <h4 class="process-title">Data Visualisation</h4>
+                  <p class="process-text">Translating numbers into interactive visual reports, line-trends, maps, and bar graphics.</p>
+                </div>
+                <span class="process-badge">Presentation</span>
+              </div>
+            </div>
+
+            <div class="process-step" style="border-color: rgba(0, 255, 178, 0.2);">
+              <div class="process-num" style="color: rgba(0, 255, 178, 0.2);">05</div>
+              <div class="process-desc-wrap">
+                <div class="process-info">
+                  <h4 class="process-title" style="color: var(--accent-green);">Actionable Insights</h4>
+                  <p class="process-text">Drawing executive decisions, highlighting business bottlenecks, and optimizing resource workflows.</p>
+                </div>
+                <span class="process-badge" style="background: rgba(0, 209, 255, 0.1); border-color: rgba(0, 209, 255, 0.2); color: var(--accent-blue);">Executive Value</span>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 5. Excel Work -->
+        <section class="slide" id="slide-4">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 05</span>
+            <h2 class="slide-title">Excel <span>Data Pre-processing & Charts</span></h2>
+          </div>
+          <div class="dashboard-grid grid-1-2 animate-item delay-1">
+            
+            <!-- Left Column: Cleaning Techniques -->
+            <div class="dashboard-card">
+              <h3 class="card-title">Cleaning Techniques</h3>
+              <p class="card-subtitle">Preparing raw sheets for loading</p>
+              <div class="card-content">
+                <p>Data cleaning consumes up to 70% of an analyst's timeline. Excel offers rapid tooling to handle anomalies:</p>
+                <ul style="margin-top: 15px;">
+                  <li><strong>Duplicate Purges:</strong> Standardizing records to single instances.</li>
+                  <li><strong>Handling Null Values:</strong> Filling blanks with zeros or conditional averages.</li>
+                  <li><strong>Text to Columns:</strong> Parsing comma or space-delimited text.</li>
+                  <li><strong>Data Type Audit:</strong> Ensuring dates and currencies compute correctly.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Right Column: Excel Chart Previews -->
+            <div class="dashboard-grid grid-3">
+              
+              <!-- Bar Chart -->
+              <div class="dashboard-card">
+                <h4 class="card-title" style="font-size: 0.95rem;">Bar Chart</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Comparing categories</p>
+                <div class="chart-container-svg">
+                  <svg class="bar-svg" viewBox="0 0 100 80" width="100%" height="100%">
+                    <rect x="10" y="50" width="15" height="30" rx="2"></rect>
+                    <rect x="35" y="20" width="15" height="60" rx="2"></rect>
+                    <rect x="60" y="35" width="15" height="45" rx="2"></rect>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Pie Chart -->
+              <div class="dashboard-card">
+                <h4 class="card-title" style="font-size: 0.95rem;">Pie Chart</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Share of total</p>
+                <div class="chart-container-svg">
+                  <svg class="pie-svg" viewBox="0 0 100 100" width="100%" height="100%">
+                    <!-- Slice 1 (60%): Accent Blue -->
+                    <path d="M 50,50 L 50,10 A 40,40 0 1,1 11.9,62.3 Z" fill="var(--accent-blue)" stroke="#0B0F1A" stroke-width="1.5"></path>
+                    <!-- Slice 2 (40%): Accent Green -->
+                    <path d="M 50,50 L 11.9,62.3 A 40,40 0 0,1 50,10 Z" fill="var(--accent-green)" stroke="#0B0F1A" stroke-width="1.5"></path>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Line Chart -->
+              <div class="dashboard-card">
+                <h4 class="card-title" style="font-size: 0.95rem;">Line Chart</h4>
+                <p style="font-size: 0.75rem; color: var(--text-muted);">Trends over time</p>
+                <div class="chart-container-svg">
+                  <svg class="line-svg" viewBox="0 0 100 80" width="100%" height="100%">
+                    <path class="line" d="M 10,65 L 35,45 L 60,55 L 90,20"></path>
+                    <circle cx="10" cy="65" r="3.5" fill="var(--accent-blue)"></circle>
+                    <circle cx="35" cy="45" r="3.5" fill="var(--accent-blue)"></circle>
+                    <circle cx="60" cy="55" r="3.5" fill="var(--accent-blue)"></circle>
+                    <circle cx="90" cy="20" r="3.5" fill="var(--accent-green)" filter="drop-shadow(0 0 4px var(--accent-green))"></circle>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 6. Power BI Dashboard -->
+        <section class="slide" id="slide-5">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 06</span>
+            <h2 class="slide-title">Interactive <span>Power BI Engine Mockup</span></h2>
+          </div>
+          
+          <div class="pbi-dashboard-container animate-item delay-1">
+            <!-- Interactivity Filter bar -->
+            <div class="pbi-filter-bar">
+              <span class="filter-label">Filter Region:</span>
+              <button class="filter-btn active" data-region="all">Global (All)</button>
+              <button class="filter-btn" data-region="north">North Region</button>
+              <button class="filter-btn" data-region="south">South Region</button>
+            </div>
+
+            <!-- Dashboard Row 1: KPI Cards -->
+            <div class="dashboard-grid grid-3">
+              <div class="dashboard-card">
+                <div class="card-subtitle">TOTAL REVENUE</div>
+                <div class="metric-large blue-text" id="kpi-revenue">$1,420,000</div>
+                <div class="metric-trend up" id="kpi-revenue-trend">
+                  <span>▲</span> +12.4% vs last Q
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="card-subtitle">ACTIVE ACCOUNTS</div>
+                <div class="metric-large green-text" id="kpi-accounts">8,920</div>
+                <div class="metric-trend up" id="kpi-accounts-trend">
+                  <span>▲</span> +8.2% monthly
+                </div>
+              </div>
+
+              <div class="dashboard-card">
+                <div class="card-subtitle">BOUNCE RATE</div>
+                <div class="metric-large" id="kpi-bounce" style="color: var(--text-main);">28.6%</div>
+                <div class="metric-trend down" id="kpi-bounce-trend">
+                  <span>▼</span> -1.5% optimized
+                </div>
+              </div>
+            </div>
+
+            <!-- Dashboard Row 2: Sales Trend Summary -->
+            <div class="dashboard-card">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                <h4 class="card-title" style="margin: 0; font-size: 0.95rem;">Quarterly Performance Matrix</h4>
+                <span class="filter-label" id="region-chart-label" style="color: var(--accent-blue);">All Regions Selected</span>
+              </div>
+              <div style="height: 120px; display: flex; align-items: flex-end; justify-content: space-around; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                <!-- Dynamic Bars linked to JS region clicks -->
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 60px;">
+                  <div class="interactive-bar-fill" id="pbi-bar-q1" style="height: 60%; width: 24px; pointer-events: none;"></div>
+                  <span style="font-size: 0.7rem; color: var(--text-muted);">Q1</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 60px;">
+                  <div class="interactive-bar-fill" id="pbi-bar-q2" style="height: 80%; width: 24px; pointer-events: none;"></div>
+                  <span style="font-size: 0.7rem; color: var(--text-muted);">Q2</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 60px;">
+                  <div class="interactive-bar-fill" id="pbi-bar-q3" style="height: 70%; width: 24px; pointer-events: none;"></div>
+                  <span style="font-size: 0.7rem; color: var(--text-muted);">Q3</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 60px;">
+                  <div class="interactive-bar-fill" id="pbi-bar-q4" style="height: 95%; width: 24px; pointer-events: none;"></div>
+                  <span style="font-size: 0.7rem; color: var(--text-muted);">Q4</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Tableau Visualisation -->
+        <section class="slide" id="slide-6">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 07</span>
+            <h2 class="slide-title">Tableau <span>Visual Storytelling</span></h2>
+          </div>
+          <div class="dashboard-grid grid-3 animate-item delay-1" style="margin-bottom: 20px;">
+            
+            <!-- Advanced Visuals -->
+            <div class="dashboard-card">
+              <h3 class="card-title">Advanced Visuals</h3>
+              <p class="card-subtitle">Beyond simple bar/pie metrics</p>
+              <div class="card-content">
+                <p>Tableau excels in rendering complex layout queries:</p>
+                <ul style="margin-top: 10px;">
+                  <li>Dual-axis composite charts</li>
+                  <li>Geo-spatial maps with heat layouts</li>
+                  <li>Density scatter matrices with cluster nodes</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Trend Analysis -->
+            <div class="dashboard-card green-accent">
+              <h3 class="card-title">Trend Analysis</h3>
+              <p class="card-subtitle">Spotting seasonal variance</p>
+              <div class="card-content">
+                <p>Calculates moving averages and predictive forecasting:</p>
+                <ul style="margin-top: 10px;">
+                  <li>Historical baseline regressions</li>
+                  <li>Standard deviation anomaly triggers</li>
+                  <li>Multi-variable predictive confidence bands</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Storytelling -->
+            <div class="dashboard-card">
+              <h3 class="card-title">Storytelling Dashboards</h3>
+              <p class="card-subtitle">Driving context, not just metrics</p>
+              <div class="card-content">
+                <p>Links dashboards sequentially to form stories:</p>
+                <ul style="margin-top: 10px;">
+                  <li>Problem discovery -> validation -> solution</li>
+                  <li>Dynamic tooltips detailing context</li>
+                  <li>Guided analytical walkthroughs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trend Chart Representation -->
+          <div class="dashboard-card animate-item delay-3">
+            <h4 class="card-title" style="font-size: 0.95rem;">Sample Story Board: Five-Year Growth Prediction</h4>
+            <div class="chart-container-svg" style="height: 100px;">
+              <svg class="line-svg" viewBox="0 0 500 80" width="100%" height="100%">
+                <!-- Confidence bounds fill -->
+                <polygon points="10,65 120,55 240,40 360,30 480,10 480,30 360,50 240,65 120,75 10,75" fill="rgba(0, 209, 255, 0.05)"></polygon>
+                <!-- Line trend -->
+                <path class="line" d="M 10,70 L 120,60 L 240,50 L 360,38 L 480,18" stroke-width="2.5"></path>
+                <circle cx="10" cy="70" r="3" fill="var(--accent-blue)"></circle>
+                <circle cx="120" cy="60" r="3" fill="var(--accent-blue)"></circle>
+                <circle cx="240" cy="50" r="3" fill="var(--accent-blue)"></circle>
+                <circle cx="360" cy="38" r="3" fill="var(--accent-blue)"></circle>
+                <circle cx="480" cy="18" r="4" fill="var(--accent-green)" filter="drop-shadow(0 0 6px var(--accent-green))"></circle>
+                <!-- Text labels -->
+                <text x="15" y="73" fill="var(--text-muted)" font-size="8">2022</text>
+                <text x="440" y="15" fill="var(--accent-green)" font-weight="600" font-size="8">Forecast Target</text>
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. Insights -->
+        <section class="slide" id="slide-7">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 08</span>
+            <h2 class="slide-title">Executive <span>Insights & Key Findings</span></h2>
+          </div>
+          
+          <div class="dashboard-card animate-item delay-1" style="height: 80%;">
+            <div class="insight-interactive-card">
+              
+              <!-- Left Chart Side -->
+              <div>
+                <h3 class="card-title" style="margin-bottom: 24px;">Click Category to Load Insight</h3>
+                
+                <div class="interactive-bars">
+                  <!-- Electronics (Highest) -->
+                  <div class="bar-wrapper active" data-category="electronics">
+                    <div class="interactive-bar-fill" style="height: 90%;">
+                      <div class="bar-tooltip">$450K</div>
+                    </div>
+                    <span class="bar-label">Electronics</span>
+                  </div>
+
+                  <!-- Home Goods -->
+                  <div class="bar-wrapper" data-category="home">
+                    <div class="interactive-bar-fill" style="height: 62%;">
+                      <div class="bar-tooltip">$310K</div>
+                    </div>
+                    <span class="bar-label">Home Goods</span>
+                  </div>
+
+                  <!-- Fashion -->
+                  <div class="bar-wrapper" data-category="fashion">
+                    <div class="interactive-bar-fill" style="height: 56%;">
+                      <div class="bar-tooltip">$280K</div>
+                    </div>
+                    <span class="bar-label">Fashion</span>
+                  </div>
+
+                  <!-- Sports -->
+                  <div class="bar-wrapper" data-category="sports">
+                    <div class="interactive-bar-fill" style="height: 38%;">
+                      <div class="bar-tooltip">$190K</div>
+                    </div>
+                    <span class="bar-label">Sports</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Description Side -->
+              <div class="insight-explanation">
+                <h4 class="card-title" style="color: var(--accent-blue);">Executive Briefing</h4>
+                
+                <!-- Electronics Box (default active) -->
+                <div class="insight-highlight-box active" id="insight-electronics">
+                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Electronics: $450K (Highest Revenue)</h5>
+                  <p class="card-content" style="font-size: 0.85rem;">Electronics constitutes 36.6% of overall gross sales. Key growth was driven by computing accessories and wireless audio hardware, showing a sustained +18% year-over-year surge.</p>
+                </div>
+
+                <!-- Home Goods Box -->
+                <div class="insight-highlight-box" id="insight-home">
+                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Home Goods: $310K (Secondary Driver)</h5>
+                  <p class="card-content" style="font-size: 0.85rem;">Home Goods remains a stable secondary driver. Growth stabilized at +4% YoY. Kitchenware bundles experienced peak performance in Q4 seasonal periods.</p>
+                </div>
+
+                <!-- Fashion Box -->
+                <div class="insight-highlight-box" id="insight-fashion">
+                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Fashion: $280K (Core Base)</h5>
+                  <p class="card-content" style="font-size: 0.85rem;">Fashion items maintained stable demand patterns with steady margins. Returning customer rate in this sector is high (42%), indicating strong brand affinity.</p>
+                </div>
+
+                <!-- Sports Box -->
+                <div class="insight-highlight-box" id="insight-sports">
+                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Sports: $190K (Niche Growth)</h5>
+                  <p class="card-content" style="font-size: 0.85rem;">Despite being the smallest segment, sports equipment boasts the highest markup margin (52%). Expanding fitness category inventory could optimize overall yield.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. Key Learnings -->
+        <section class="slide" id="slide-8">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 09</span>
+            <h2 class="slide-title">Analyst <span>Key Learnings</span></h2>
+          </div>
+          <div class="dashboard-grid grid-3 animate-item delay-1">
+            
+            <!-- Learning 1: Clean Data -->
+            <div class="dashboard-card green-accent">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h3 class="card-title">1. Clean Data is Paramount</h3>
+              <div class="card-content">
+                <p>Garbage in, garbage out. No level of visual engineering or advanced calculation can fix outputs grounded on corrupted, misaligned, or poorly cleaned data structures.</p>
+                <ul style="margin-top: 12px;">
+                  <li>Pre-processing is the most vital step</li>
+                  <li>Rigorous schema audits save downstream work</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Learning 2: Choose Correct Charts -->
+            <div class="dashboard-card">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              </div>
+              <h3 class="card-title">2. Visual Context Rules</h3>
+              <div class="card-content">
+                <p>Avoid chart clutter. Selecting the appropriate visual type ensures rapid parsing of information. A complex visual that requires a manual is a design failure.</p>
+                <ul style="margin-top: 12px;">
+                  <li>Bar charts for category comparison</li>
+                  <li>Line charts for tracking timelines</li>
+                  <li>Pie slices only for simple segment breakdowns</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Learning 3: Tools Simplify Analysis -->
+            <div class="dashboard-card">
+              <div class="card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><path d="M9 21V9h6v12"></path></svg>
+              </div>
+              <h3 class="card-title">3. Tool Integration Power</h3>
+              <div class="card-content">
+                <p>Use the full stack. Connect Excel's formula engine, Power BI's relational database modeling, and Tableau's storytelling canvases for maximum corporate leverage.</p>
+                <ul style="margin-top: 12px;">
+                  <li>Build reproducible template workbooks</li>
+                  <li>Automate updates using database API linkages</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 10. Conclusion -->
+        <section class="slide" id="slide-9">
+          <div class="slide-header">
+            <span class="slide-title-pre">Slide 10</span>
+            <h2 class="slide-title">Conclusion & <span>Summary takeaways</span></h2>
+          </div>
+          <div class="dashboard-grid grid-2 animate-item delay-1" style="margin-bottom: 24px;">
+            
+            <!-- Conclusion Takeaway 1 -->
+            <div class="dashboard-card">
+              <h3 class="card-title" style="color: var(--accent-blue);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><polygon points="6 2 18 2 18 6 6 6"></polygon><rect x="3" y="6" width="18" height="16" rx="2"></rect></svg>
+                Data Analytics Supports Growth
+              </h3>
+              <p class="card-content" style="font-size: 0.95rem;">
+                By implementing quantitative systems, organisations shift from operating on retro-active indicators to modeling proactive indicators. Business analytics provides concrete proof to guide strategic product roadmaps and minimize resource overheads.
+              </p>
+            </div>
+
+            <!-- Conclusion Takeaway 2 -->
+            <div class="dashboard-card green-accent">
+              <h3 class="card-title" style="color: var(--accent-green);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                Visualisation Demystifies Complexity
+              </h3>
+              <p class="card-content" style="font-size: 0.95rem;">
+                Even the most thorough algorithms fail if decision-makers cannot interpret the data. Visual panels bridge the gap between technical analysts and executive teams, transforming obscure cells into visual assets that anyone can read.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Bottom Thank You block -->
+          <div class="dashboard-card animate-item delay-3" style="text-align: center; border-color: rgba(0, 255, 178, 0.15);">
+            <h3 class="card-title" style="justify-content: center; font-size: 1.4rem; color: var(--accent-green);">Thank You for Your Time</h3>
+            <p class="card-content" style="margin-top: 6px;">Questions and feedback are welcome. Let's build something data-driven together.</p>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Bottom HUD Controls -->
+      <footer class="dashboard-hud">
+        
+        <!-- Progress Stepper -->
+        <div class="hud-progress-container">
+          <span class="hud-progress-text" id="hud-slide-counter">01 / 10</span>
+          <div class="hud-progress-bar-bg">
+            <div class="hud-progress-bar-fill" id="hud-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Keyboard Controls Legend -->
+        <div class="hud-keyboard-legend">
+          Navigate: <span class="key-cap">←</span> / <span class="key-cap">→</span> or <span class="key-cap">Space</span>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="hud-nav-buttons">
+          <button class="hud-btn" id="prev-btn" disabled>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Prev
+          </button>
+          <button class="hud-btn" id="next-btn">
+            Next
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
