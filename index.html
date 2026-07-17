@@ -19,10 +19,6 @@
       <header class="dashboard-header">
         <h1>DATA ANALYTICS <span>& VISUALISATION</span></h1>
         <div class="header-status">
-          <div class="status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE PORTFOLIO DECK</span>
-          </div>
           <button class="fullscreen-btn" id="fullscreen-toggle">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
             Fullscreen
@@ -431,80 +427,93 @@
         <section class="slide" id="slide-7">
           <div class="slide-header">
             <span class="slide-title-pre">Slide 08</span>
-            <h2 class="slide-title">Executive <span>Insights & Key Findings</span></h2>
+            <h2 class="slide-title">Executive <span>Dashboard Creation & Insights</span></h2>
           </div>
           
-          <div class="dashboard-card animate-item delay-1" style="height: 80%;">
-            <div class="insight-interactive-card">
+          <div class="dashboard-card animate-item delay-1" style="height: calc(100% - 70px);">
+            <!-- Interactive dashboard toggle bar -->
+            <div class="dashboard-toggle-bar">
+              <span class="filter-label">Select Dashboard:</span>
+              <button class="toggle-btn active" data-dashboard="sales">Sales Dashboard</button>
+              <button class="toggle-btn" data-dashboard="logistics">Logistics Dashboard</button>
+            </div>
+
+            <!-- Content Area containing two dashboards -->
+            <div class="dashboard-insights-container">
               
-              <!-- Left Chart Side -->
-              <div>
-                <h3 class="card-title" style="margin-bottom: 24px;">Click Category to Load Insight</h3>
-                
-                <div class="interactive-bars">
-                  <!-- Electronics (Highest) -->
-                  <div class="bar-wrapper active" data-category="electronics">
-                    <div class="interactive-bar-fill" style="height: 90%;">
-                      <div class="bar-tooltip">$450K</div>
-                    </div>
-                    <span class="bar-label">Electronics</span>
-                  </div>
-
-                  <!-- Home Goods -->
-                  <div class="bar-wrapper" data-category="home">
-                    <div class="interactive-bar-fill" style="height: 62%;">
-                      <div class="bar-tooltip">$310K</div>
-                    </div>
-                    <span class="bar-label">Home Goods</span>
-                  </div>
-
-                  <!-- Fashion -->
-                  <div class="bar-wrapper" data-category="fashion">
-                    <div class="interactive-bar-fill" style="height: 56%;">
-                      <div class="bar-tooltip">$280K</div>
-                    </div>
-                    <span class="bar-label">Fashion</span>
-                  </div>
-
-                  <!-- Sports -->
-                  <div class="bar-wrapper" data-category="sports">
-                    <div class="interactive-bar-fill" style="height: 38%;">
-                      <div class="bar-tooltip">$190K</div>
-                    </div>
-                    <span class="bar-label">Sports</span>
-                  </div>
+              <!-- Left Side: Dashboard Preview Frame -->
+              <div class="dashboard-preview-frame">
+                <!-- Sales Dashboard Screenshot -->
+                <div class="dashboard-img-wrapper active" id="img-sales">
+                  <img src="sales_dashboard.jpg" alt="Sales Dashboard Screenshot">
+                </div>
+                <!-- Logistics Dashboard Screenshot -->
+                <div class="dashboard-img-wrapper" id="img-logistics">
+                  <img src="logistics_dashboard.jpg" alt="Logistics Dashboard Screenshot">
                 </div>
               </div>
-
-              <!-- Right Description Side -->
-              <div class="insight-explanation">
-                <h4 class="card-title" style="color: var(--accent-blue);">Executive Briefing</h4>
+              
+              <!-- Right Side: Interactive Insights Reveal Area -->
+              <div class="dashboard-insights-reveal">
                 
-                <!-- Electronics Box (default active) -->
-                <div class="insight-highlight-box active" id="insight-electronics">
-                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Electronics: $450K (Highest Revenue)</h5>
-                  <p class="card-content" style="font-size: 0.85rem;">Electronics constitutes 36.6% of overall gross sales. Key growth was driven by computing accessories and wireless audio hardware, showing a sustained +18% year-over-year surge.</p>
+                <!-- Reveal Overlay (visible by default, click to hide/reveal insights) -->
+                <div class="reveal-overlay active" id="insights-reveal-overlay">
+                  <div class="reveal-overlay-content">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pulse-icon"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <h3>Actionable Insights</h3>
+                    <p>Click below to analyze and reveal executive findings</p>
+                    <button class="reveal-btn" id="reveal-insights-btn">Reveal Insights</button>
+                  </div>
                 </div>
 
-                <!-- Home Goods Box -->
-                <div class="insight-highlight-box" id="insight-home">
-                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Home Goods: $310K (Secondary Driver)</h5>
-                  <p class="card-content" style="font-size: 0.85rem;">Home Goods remains a stable secondary driver. Growth stabilized at +4% YoY. Kitchenware bundles experienced peak performance in Q4 seasonal periods.</p>
-                </div>
+                <!-- Insights Content (hidden by default) -->
+                <div class="insights-content-wrapper" id="insights-content-panel">
+                  
+                  <!-- Sales Dashboard Insights -->
+                  <div class="insights-group" id="insights-sales">
+                    <h4 class="insights-group-title">Sales Performance Insights</h4>
+                    
+                    <div class="insight-point-card">
+                      <div class="point-num">01</div>
+                      <div class="point-content">
+                        <h5>Product Profit Polarization</h5>
+                        <p><strong>City Cruiser</strong> is the primary profit driver yielding <strong>£54.64M (97% of budget target)</strong>, while <strong>Yellow Edition (-£27.66M)</strong> and <strong>Trail Master (-£25.43M)</strong> are severe drags, running at ~45% below their budgets.</p>
+                      </div>
+                    </div>
+                    
+                    <div class="insight-point-card">
+                      <div class="point-num">02</div>
+                      <div class="point-content">
+                        <h5>Profit Margin Target Shortfall</h5>
+                        <p>While total revenue slightly exceeded budget targets by <strong>1.8% (£213.98M)</strong>, operational costs and product losses dragged total profit down by <strong>-6.6% (£56.43M)</strong> and profit margin down by <strong>-8.3% (26.37%)</strong>.</p>
+                      </div>
+                    </div>
+                  </div>
 
-                <!-- Fashion Box -->
-                <div class="insight-highlight-box" id="insight-fashion">
-                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Fashion: $280K (Core Base)</h5>
-                  <p class="card-content" style="font-size: 0.85rem;">Fashion items maintained stable demand patterns with steady margins. Returning customer rate in this sector is high (42%), indicating strong brand affinity.</p>
-                </div>
+                  <!-- Logistics Dashboard Insights -->
+                  <div class="insights-group" id="insights-logistics" style="display: none;">
+                    <h4 class="insights-group-title">Logistics Operations Insights</h4>
+                    
+                    <div class="insight-point-card">
+                      <div class="point-num">01</div>
+                      <div class="point-content">
+                        <h5>Shipments & Net Profit Growth</h5>
+                        <p>Total shipments grew significantly by <strong>+29.5% YoY (12,294 units)</strong> and overall Sales rose <strong>+20.4% ($733K)</strong>, leading to an improved Net Profit Ratio of <strong>20% (+2.3% improvement YoY)</strong>.</p>
+                      </div>
+                    </div>
+                    
+                    <div class="insight-point-card">
+                      <div class="point-num">02</div>
+                      <div class="point-content">
+                        <h5>Operational Accuracies & Speed</h5>
+                        <p>Average delivery time stands at <strong>3.91 days</strong> (mostly 2+ days delivery) and inventory accuracy target of <strong>93%</strong> was missed (averaging <strong>~84%</strong>), indicating bottlenecks in warehouse dispatching.</p>
+                      </div>
+                    </div>
+                  </div>
 
-                <!-- Sports Box -->
-                <div class="insight-highlight-box" id="insight-sports">
-                  <h5 style="color: var(--accent-green); margin-bottom: 6px; font-size: 0.95rem;">Sports: $190K (Niche Growth)</h5>
-                  <p class="card-content" style="font-size: 0.85rem;">Despite being the smallest segment, sports equipment boasts the highest markup margin (52%). Expanding fitness category inventory could optimize overall yield.</p>
                 </div>
+                
               </div>
-
             </div>
           </div>
         </section>

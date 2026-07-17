@@ -16,10 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Slide state manager
   function updateSlideView() {
     slides.forEach((slide, idx) => {
+      slide.classList.remove('active', 'past', 'future');
       if (idx === currentSlide) {
         slide.classList.add('active');
+      } else if (idx < currentSlide) {
+        slide.classList.add('past');
       } else {
-        slide.classList.remove('active');
+        slide.classList.add('future');
       }
     });
 
@@ -100,27 +103,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle morphing heights/draw triggers on specific slide entry
   function handleSlideTransitions(slideIndex) {
-    // Slide 8: Interactive Insights Bar Animate In
-    const barFills = document.querySelectorAll('.interactive-bars .interactive-bar-fill');
+    // Slide 8: Reset Insights Reveal state on entry
     if (slideIndex === 7) { // Slide 8 is index 7
-      // Set heights after slide shows
-      setTimeout(() => {
-        barFills.forEach(bar => {
-          const barWrapper = bar.closest('.bar-wrapper');
-          const category = barWrapper.getAttribute('data-category');
-          let height = '0%';
-          if (category === 'electronics') height = '90%';
-          if (category === 'home') height = '62%';
-          if (category === 'fashion') height = '56%';
-          if (category === 'sports') height = '38%';
-          bar.style.height = height;
-        });
-      }, 250);
-    } else {
-      // Reset heights so they animate again on next entry
-      barFills.forEach(bar => {
-        bar.style.height = '0%';
-      });
+      const salesToggle = document.querySelector('.dashboard-toggle-bar .toggle-btn[data-dashboard="sales"]');
+      if (salesToggle) {
+        salesToggle.click();
+      }
+      hideInsights();
     }
 
     // Slide 6: Power BI Engine Draw trigger
@@ -238,26 +227,63 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ----------------------------------------------------
-  // Slide 8: Interactive Insights Briefing Engine
+  // Slide 8: Interactive Dashboard & Insights Reveal
   // ----------------------------------------------------
-  const barWrappers = document.querySelectorAll('.bar-wrapper');
-  const insightBoxes = document.querySelectorAll('.insight-highlight-box');
+  const toggleButtons = document.querySelectorAll('.dashboard-toggle-bar .toggle-btn');
+  const imgWrappers = document.querySelectorAll('.dashboard-img-wrapper');
+  const insightsGroups = document.querySelectorAll('.insights-group');
+  const revealOverlay = document.getElementById('insights-reveal-overlay');
+  const revealBtn = document.getElementById('reveal-insights-btn');
+  const insightsPanel = document.getElementById('insights-content-panel');
 
-  barWrappers.forEach(wrap => {
-    wrap.addEventListener('click', (e) => {
-      const clickedWrap = e.currentTarget;
-      const category = clickedWrap.getAttribute('data-category');
+  // Reveal insights action
+  function revealInsights() {
+    if (revealOverlay) revealOverlay.classList.remove('active');
+    if (insightsPanel) insightsPanel.classList.add('active');
+  }
 
-      // Set active bar wrapper
-      barWrappers.forEach(w => w.classList.remove('active'));
-      clickedWrap.classList.add('active');
+  // Hide insights action
+  function hideInsights() {
+    if (revealOverlay) revealOverlay.classList.add('active');
+    if (insightsPanel) insightsPanel.classList.remove('active');
+  }
 
-      // Set active explanation box
-      insightBoxes.forEach(box => box.classList.remove('active'));
-      const targetBox = document.getElementById(`insight-${category}`);
-      if (targetBox) {
-        targetBox.classList.add('active');
+  if (revealBtn && revealOverlay) {
+    revealBtn.addEventListener('click', revealInsights);
+    revealOverlay.addEventListener('click', (e) => {
+      if (e.target === revealOverlay || revealOverlay.contains(e.target)) {
+        revealInsights();
       }
+    });
+  }
+
+  toggleButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // Remove active from buttons
+      toggleButtons.forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+
+      const dashboard = e.target.getAttribute('data-dashboard');
+
+      // Update image
+      imgWrappers.forEach(img => {
+        img.classList.remove('active');
+        if (img.id === `img-${dashboard}`) {
+          img.classList.add('active');
+        }
+      });
+
+      // Update insights content but hide them (reset state)
+      hideInsights();
+
+      // Set display: block or none for the groups
+      insightsGroups.forEach(group => {
+        if (group.id === `insights-${dashboard}`) {
+          group.style.display = 'flex';
+        } else {
+          group.style.display = 'none';
+        }
+      });
     });
   });
 });
