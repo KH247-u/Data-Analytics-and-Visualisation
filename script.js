@@ -9,9 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let currentSlide = 0;
   const totalSlides = slides.length;
+  let isTransitioning = false;
 
   // Initialize presentation
   updateSlideView();
+
+  // Slide navigation with premium fluid transitions
+  function navigateToSlide(targetIdx) {
+    if (isTransitioning || targetIdx === currentSlide || targetIdx < 0 || targetIdx >= totalSlides) return;
+    
+    isTransitioning = true;
+    currentSlide = targetIdx;
+    updateSlideView();
+    
+    // Lock navigation actions during transition sweep
+    setTimeout(() => {
+      isTransitioning = false;
+    }, 600);
+  }
 
   // Slide state manager
   function updateSlideView() {
@@ -54,15 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function nextSlide() {
     if (currentSlide < totalSlides - 1) {
-      currentSlide++;
-      updateSlideView();
+      navigateToSlide(currentSlide + 1);
     }
   }
 
   function prevSlide() {
     if (currentSlide > 0) {
-      currentSlide--;
-      updateSlideView();
+      navigateToSlide(currentSlide - 1);
     }
   }
 
@@ -74,8 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
   slideLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       const targetIdx = parseInt(e.currentTarget.getAttribute('data-slide'), 10);
-      currentSlide = targetIdx;
-      updateSlideView();
+      navigateToSlide(targetIdx);
     });
   });
 
