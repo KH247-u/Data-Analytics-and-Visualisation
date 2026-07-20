@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Handle morphing heights/draw triggers on specific slide entry
   function handleSlideTransitions(slideIndex) {
-    // Slide 8: Reset Insights Reveal state on entry
-    if (slideIndex === 7) { // Slide 8 is index 7
+    // Slide 9: Reset Insights Reveal state on entry (0-indexed 8)
+    if (slideIndex === 8) { 
       const salesToggle = document.querySelector('.dashboard-toggle-bar .toggle-btn[data-dashboard="sales"]');
       if (salesToggle) {
         salesToggle.click();
@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
       hideInsights();
     }
 
-    // Slide 6: Power BI Engine Draw trigger
+    // Slide 7: Power BI Engine Draw trigger (0-indexed 6)
     const pbiBars = document.querySelectorAll('[id^="pbi-bar-"]');
-    if (slideIndex === 5) { // Slide 6 is index 5
+    if (slideIndex === 6) { 
       setTimeout(() => {
         // Trigger current region active values
         const activeRegionBtn = document.querySelector('.pbi-filter-bar .filter-btn.active');
